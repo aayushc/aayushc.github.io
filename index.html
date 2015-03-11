@@ -26,6 +26,40 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+    google.load('visualization', '1', {packages: ['corechart']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['City',          '2010 Population'],
+        ['New York City, NY',       8175000],
+        ['Los Angeles, CA',         3792000],
+        ['Chicago, IL',             2695000],
+        ['Houston, TX',             2099000],
+        ['Philadelphia, PA',        1526000]
+      ]);
+
+      var options = {
+        title: 'Population of Largest U.S. Cities',
+        width: 1000,
+        height: 563,
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'City'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(
+        document.getElementById('ex0'));
+
+      chart.draw(data, options);
+    }
+    </script>
 </head>
 <body>
 
@@ -67,7 +101,7 @@
 		<td style="margin-top: 20px;">
 		<img alt="MyPhoto" src="MyPic1.jpg" >
 		</td>
-		<td style="padding-left: 20px;">
+		<td style="padding-left: 20px; padding-top: 20px;">
 		<p class="lead">
 		Hi, First of all Thanks for visiting my page. <br><br>
 		I am a student at Carnegie Mellon University, pursuing Master's in Information Technology, EBiz.
@@ -111,28 +145,43 @@
 		
 		<div class="inner cover"  style="margin-top: 120px;">
 		<h1 class="cover-heading" style="font-size: 60px">PROJECTS</h1>
-		<div style="font-size: 24px; font-weight: bold;color: silver;">WEB DEVELOPER, VODAFONE SITE SEARCH</div>
-		<div style="font-size: 18px; font-weight: bold;color: yellowgreen">Java, Google Search Appliance, JSP, CSS, JavaScript</div>
+		<div style="font-size: 24px; font-weight: bold;color: silver;">WEB APPLICATION DEVELOPMENT</div>
+		<div style="font-size: 18px; font-weight: bold;color: yellowgreen">Java, JSP, CSS, JavaScript</div>
 		<br>
 		<p class="lead">
-		Involved in development of core application for search portal for all the local markets. <br>
-		Worked on development of both backend and frontend of the search portal. 
-		
+		Worked on development of online portal for Carnegie Financial Services.<br>
+		Developed the complete Buy Funds, Sell Funds and Transaction History for Carnegie Financial Services.
+				
 		</p>
-		<div style="font-size: 24px; font-weight: bold; color: silver;">WEB DEVELOPER, VODAFONE eCOMMERCE WEBSITE</div>
-		<div style="font-size: 18px; font-weight: bold;color: yellowgreen">Java, ATG, JSP, Omniture Site Catalyst</div>
+		<div style="font-size: 24px; font-weight: bold; color: silver;">Auto Scaling and Load Balancing using AWS APIs</div>
+		<div style="font-size: 18px; font-weight: bold;color: yellowgreen">Cloud Computing, Java, AWS APIs, Amazon EC2</div>
 		<br>
 		<p class="lead">
-		Worked on development of eCommerce portal for Vodafone UK.  <br>
-		Was involved in development of key functionalities like checkout and user journey tracking.
+		In this project, I explored the AWS APIs and had written code to perform the activities like launching  Elastic Load Balancer and
+		initiate an Auto Scaling Group along with Launch Configuration, Auto Scale Polices and CloudWatch Alarms. 
 		
 		</p>
+		
+		<div style="font-size: 24px; font-weight: bold; color: silver;">Sentimental Analysis of Tweets Using AWS</div>
+		<div style="font-size: 18px; font-weight: bold;color: yellowgreen">AWS EC2, Java, EMR, HBase, MySQL</div>
+		<br>
+		<p class="lead">
+		This is an ongoing team project. The project is to develop a frontend to accept request from server and send the response containing 
+		sentimental analysis of a particular tweet from 1 TB of tweets dataset.  
+		
+		</p>
+		
 		</div>
           <!-- <div class="mastfoot">
             <div class="inner">
               <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
             </div>
           </div> -->
+
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+    
+          <div id="ex0"></div>
+
 
         </div>
 
